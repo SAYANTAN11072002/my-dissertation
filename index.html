@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Mangrove Plantation & MCDM: A Case Study</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* Black border all around – body background ensures border effect */
+      background: #000000;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', 'Roboto', 'Poppins', system-ui, sans-serif;
+      padding: 24px;
+    }
+
+    /* Main landscape panel */
+    .landscape-card {
+      max-width: 1400px;
+      width: 100%;
+      /* Landscape feel: wide aspect ratio */
+      aspect-ratio: 16 / 9;
+      background: url('https://images.pexels.com/photos/38043586/pexels-photo-38043586.jpeg') center center / cover no-repeat;
+      border-radius: 32px;
+      /* Inner dark overlay for readability + black border effect via outer body */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.6);
+      transition: transform 0.25s ease;
+    }
+
+    .landscape-card:hover {
+      transform: scale(1.01);
+    }
+
+    /* Semi‑transparent dark scrim to make text pop, but background still vivid */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 32px;
+      pointer-events: none;
+    }
+
+    /* Content layer (z-index above overlay) */
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+    }
+
+    /* Main title */
+    .hero-title {
+      font-size: clamp(1.8rem, 6vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF 0%, #E0F0E0 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    /* decorative sub‑line */
+    .sub {
+      font-size: 0.9rem;
+      color: #d4f0d0;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      backdrop-filter: blur(2px);
+    }
+
+    /* BUTTONS GRID — stylish & responsive */
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    /* Modern glassmorphic buttons with glow */
+    .btn {
+      background: rgba(10, 20, 15, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(100, 180, 120, 0.6);
+      border-radius: 60px;
+      padding: 0.9rem 1.8rem;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #f0fff0;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+      text-decoration: none;
+      display: inline-block;
+      font-family: inherit;
+      text-align: center;
+      min-width: 170px;
+    }
+
+    .btn:hover {
+      background: rgba(40, 80, 55, 0.9);
+      border-color: #b8e0b0;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+      color: white;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    /* different accent variations for variety (optional) */
+    .btn-accent {
+      border-left: 3px solid #ffd966;
+      border-right: 3px solid #ffd966;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 850px) {
+      body {
+        padding: 16px;
+      }
+      .btn {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.85rem;
+        min-width: 150px;
+      }
+      .button-grid {
+        gap: 0.9rem;
+      }
+      .hero-title {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .landscape-card {
+        aspect-ratio: auto;
+        min-height: 70vh;
+      }
+      .btn {
+        width: 80%;
+        min-width: auto;
+      }
+      .button-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* subtle footer */
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.7rem;
+      color: #cce6cc;
+      opacity: 0.8;
+      backdrop-filter: blur(2px);
+    }
+
+    /* edge black border is achieved by body background + padding + border-radius on main card */
+  </style>
+</head>
+<body>
+<div class="landscape-card">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="hero-title">🌱 MANGROVE PLANTATION & MCDM <br> A CASE STUDY</div>
+    <div class="sub">Indian Sundarban · Geospatial Multi‑Criteria Framework</div>
+
+    <div class="button-grid">
+      <a href="https://sayantan11072002.github.io/main-page-sundarban/" class="btn" target="_blank" rel="noopener noreferrer">📌 TOPIC</a>
+      <a href="https://sayantan11072002.github.io/forest-dynamics-of-indian-sundarban/" class="btn" target="_blank" rel="noopener noreferrer">🌲 FOREST DYNAMICS</a>
+      <a href="https://sayantan11072002.github.io/creek-density-of-indian-sundarrban/" class="btn" target="_blank" rel="noopener noreferrer">💧 CREEK DENSITY</a>
+      <a href="https://sayantan11072002.github.io/land_dynamics/" class="btn" target="_blank" rel="noopener noreferrer">🔄 LAND DYNAMICS</a>
+      <a href="https://sayantan11072002.github.io/saline-track/" class="btn" target="_blank" rel="noopener noreferrer">🧂 HYPER SALINE TRACT</a>
+      <a href="https://sayantan11072002.github.io/vegetation-density/" class="btn" target="_blank" rel="noopener noreferrer">🌿 VEGETATION DENSITY</a>
+      <a href="https://sayantan11072002.github.io/final-page-of-sundarban-site-suitability/" class="btn btn-accent" target="_blank" rel="noopener noreferrer">🗺️ MANGROVE SUITABILITY MAPPING</a>
+    </div>
+    <div class="footer-note"></div>
+  </div>
+</div>
+</body>
+</html>
